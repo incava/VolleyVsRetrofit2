@@ -4,15 +4,50 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".ui.MainActivity">
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_volley"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:text="@string/volley"
+        app:layout_constraintEnd_toStartOf="@+id/btn_retrofit2"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_retrofit2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/retrofit2"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_volley"
+        app:layout_constraintEnd_toStartOf="@+id/btn_clear_list"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_volley"
+        app:layout_constraintTop_toTopOf="@+id/btn_volley" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_clear_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/clearlist"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_retrofit2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_retrofit2"
+        app:layout_constraintTop_toTopOf="@+id/btn_retrofit2" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcv_movie_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="16dp"
+        tools:listitem="@layout/item_movie_list"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_volley"
+        tools:layout_editor_absoluteX="0dp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

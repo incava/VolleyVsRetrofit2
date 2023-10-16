@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">VolleyVsRetrofit2</string>
+    <string name="retrofit2">Retrofit2</string>
+    <string name="volley">Volley</string>
+    <string name="clearlist">Clear List</string>
 </resources>
