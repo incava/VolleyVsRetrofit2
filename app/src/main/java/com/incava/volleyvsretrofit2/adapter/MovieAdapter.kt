@@ -3,9 +3,13 @@ package com.incava.volleyvsretrofit2.adapter
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.incava.volleyvsretrofit2.databinding.ItemMovieListBinding
 import com.incava.volleyvsretrofit2.model.MovieDTO
+import com.incava.volleyvsretrofit2.util.Number.showImageForNumber
+import com.incava.volleyvsretrofit2.util.NumberPicName
 
 /**
  * 영화 데이터를 리사이클러뷰로 보여주는 어댑터 클래스
@@ -20,8 +24,8 @@ class MovieAdapter(private val dataSet : MutableList<MovieDTO>) :
             binding.apply {
                 tvMovieNm.text = "제목명 : ${data.movieNm}"
                 tvAudiAcc.text = "관객수 : ${data.audiAcc}"
-                tvRank.text = "등수 : ${data.rank}"
                 tvOpenDt.text = "개봉일 : ${data.openDt}"
+                showImageForNumber(data.rank,ivRank)
             }
         }
     }
@@ -37,4 +41,6 @@ class MovieAdapter(private val dataSet : MutableList<MovieDTO>) :
     }
 
     override fun getItemCount() = dataSet.size
+
+
 }
