@@ -17,12 +17,12 @@ object VolleyClient {
     fun getRestURL(url: String): String {
         // GET쿼리문을 RestAPI URL로 만들어 리턴
         // 필요한 키와 파라미터를 구현한 맵
-        var MovieParams = mapOf(
+        var movieParams = mapOf(
             "key" to MovieInfo.MOVIE_API_KEY,
             "targetDt" to CalenderUtil.getDateYesterdayForamtyyyymmdd(),
         )
 
-        val dataParse = MovieParams.entries.joinToString("&") { (key, value) -> "$key=$value" }
+        val dataParse = movieParams.entries.joinToString("&") { (key, value) -> "$key=$value" }
         return "$url?$dataParse"
     }
 
