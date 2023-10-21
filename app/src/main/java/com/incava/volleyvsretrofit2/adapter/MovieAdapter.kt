@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.incava.volleyvsretrofit2.databinding.ItemMovieListBinding
 import com.incava.volleyvsretrofit2.model.MovieDTO
+import com.incava.volleyvsretrofit2.util.Number.formatNumber
 import com.incava.volleyvsretrofit2.util.Number.showImageForNumber
 import com.incava.volleyvsretrofit2.util.NumberPicName
 
@@ -23,7 +24,7 @@ class MovieAdapter(private val dataSet : MutableList<MovieDTO>) :
         fun bind(data: MovieDTO) {
             binding.apply {
                 tvMovieNm.text = "제목명 : ${data.movieNm}"
-                tvAudiAcc.text = "관객수 : ${data.audiAcc}"
+                tvAudiAcc.text = "관객수 : ${formatNumber(data.audiAcc.toLong())}명"
                 tvOpenDt.text = "개봉일 : ${data.openDt}"
                 showImageForNumber(data.rank,ivRank)
             }

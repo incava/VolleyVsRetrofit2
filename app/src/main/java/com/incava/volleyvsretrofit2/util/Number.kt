@@ -5,7 +5,7 @@ import com.bumptech.glide.Glide
 
 object Number {
 
-    // 억 단위 까지 관객 수 계
+    // 억 단위 까지 관객 수를 단위로 나누어 명수로 리턴
     fun formatNumber(number: Long): String {
         val stringBuilder = StringBuilder()
         val absNumber = Math.abs(number)
